@@ -3,21 +3,21 @@
  *
  * This file is part of Aura for PHP.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Web\Request\Accept;
+namespace Aura\Accept;
 
-use Aura\Web\Request\Accept\Value\ValueFactory;
+use Aura\Accept\Value\ValueFactory;
 
 /**
  *
  * Represents a collection of `Accept-Charset` header values, sorted in
  * quality order.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  */
 class Charset extends AbstractValues

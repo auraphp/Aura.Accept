@@ -3,18 +3,18 @@
  *
  * This file is part of Aura for PHP.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Web\Request\Accept\Value;
+namespace Aura\Accept\Value;
 
 /**
  *
  * A factory to create value objects.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  */
 class ValueFactory
@@ -27,10 +27,10 @@ class ValueFactory
      *
      */
     protected $map = array(
-        'charset' => 'Aura\Web\Request\Accept\Value\Charset',
-        'encoding' => 'Aura\Web\Request\Accept\Value\Encoding',
-        'language' => 'Aura\Web\Request\Accept\Value\Language',
-        'media' => 'Aura\Web\Request\Accept\Value\Media',
+        'charset' => 'Aura\Accept\Value\Charset',
+        'encoding' => 'Aura\Accept\Value\Encoding',
+        'language' => 'Aura\Accept\Value\Language',
+        'media' => 'Aura\Accept\Value\Media',
     );
 
     /**

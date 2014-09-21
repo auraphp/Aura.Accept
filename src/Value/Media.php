@@ -3,18 +3,18 @@
  *
  * This file is part of Aura for PHP.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Web\Request\Accept\Value;
+namespace Aura\Accept\Value;
 
 /**
  *
  * Represents an acceptable media type value.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  */
 class Media extends AbstractValue

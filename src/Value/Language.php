@@ -3,18 +3,18 @@
  *
  * This file is part of Aura for PHP.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Web\Request\Accept\Value;
+namespace Aura\Accept\Value;
 
 /**
  *
  * Represents an acceptable language value.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  */
 class Language extends AbstractValue

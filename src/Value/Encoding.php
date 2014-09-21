@@ -3,32 +3,32 @@
  *
  * This file is part of Aura for PHP.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Web\Request\Accept\Value;
+namespace Aura\Accept\Value;
 
 /**
  *
- * Represents an acceptable charset value.
+ * Represents an encoding value.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  */
-class Charset extends AbstractValue
+class Encoding extends AbstractValue
 {
     /**
      *
-     * Checks if an available charset value matches this acceptable value.
+     * Checks if an available encoding value matches this acceptable value.
      *
-     * @param Charset $avail An available charset value.
+     * @param Encoding $avail An available encoding value.
      *
      * @return True on a match, false if not.
      *
      */
-    public function match(Charset $avail)
+    public function match(Encoding $avail)
     {
         return strtolower($this->value) == strtolower($avail->getValue())
             && $this->matchParameters($avail);

@@ -1,17 +1,17 @@
 {
-    "name": "aura/web",
+    "name": "aura/accept",
     "type": "library",
     "description": "Provides web Request and Response objects for use by web controllers. These are representations of the PHP web environment, not HTTP request and response objects proper.",
     "keywords": [
         "request",
         "response"
     ],
-    "homepage": "https://github.com/auraphp/Aura.Web/releases",
+    "homepage": "https://github.com/auraphp/Aura.Accept/releases",
     "license": "BSD-2-Clause",
     "authors": [
         {
-            "name": "Aura.Web Contributors",
-            "homepage": "https://github.com/auraphp/Aura.Web/contributors"
+            "name": "Aura.Accept Contributors",
+            "homepage": "https://github.com/auraphp/Aura.Accept/contributors"
         }
     ],
     "require": {
@@ -19,15 +19,15 @@
     },
     "autoload": {
         "psr-4": {
-            "Aura\\Web\\": "src/",
-            "Aura\\Web\\_Config\\": "config/"
+            "Aura\\Accept\\": "src/",
+            "Aura\\Accept\\_Config\\": "config/"
         }
     },
     "extra": {
         "aura": {
             "type": "library",
             "config": {
-                "common": "Aura\\Web\\_Config\\Common"
+                "common": "Aura\\Accept\\_Config\\Common"
             }
         },
         "branch-alias": {

@@ -3,22 +3,22 @@
  *
  * This file is part of Aura for PHP.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Web\Request\Accept;
+namespace Aura\Accept;
 
 use ArrayIterator;
-use Aura\Web\Request\Accept\Value\ValueFactory;
+use Aura\Accept\Value\ValueFactory;
 use IteratorAggregate;
 
 /**
  *
  * Represents a collection of `Accept*` header values, sorted in quality order.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  */
 abstract class AbstractValues implements IteratorAggregate

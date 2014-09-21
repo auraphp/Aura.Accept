@@ -1,15 +1,15 @@
 <?php
-namespace Aura\Web\Request;
+namespace Aura\Accept;
 
 class AcceptTest extends \PHPUnit_Framework_TestCase
 {
     protected function newAccept($server = array())
     {
-        $value_factory = new Accept\Value\ValueFactory;
-        $charset = new Accept\Charset($value_factory, $server);
-        $encoding = new Accept\Encoding($value_factory, $server);
-        $language = new Accept\Language($value_factory, $server);
-        $media = new Accept\Media($value_factory, $server);
+        $value_factory = new Value\ValueFactory;
+        $charset = new Charset($value_factory, $server);
+        $encoding = new Encoding($value_factory, $server);
+        $language = new Language($value_factory, $server);
+        $media = new Media($value_factory, $server);
 
         return new Accept(
             $charset,
@@ -92,7 +92,7 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
         if ($expected === false) {
             $this->assertFalse($expected, $actual);
         } else {
-            $this->assertInstanceOf('Aura\Web\Request\Accept\Value\Charset', $actual->available);
+            $this->assertInstanceOf('Aura\Accept\Value\Charset', $actual->available);
             $this->assertSame($expected, $actual->available->getValue());
         }
     }
@@ -112,7 +112,7 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
         if ($expected === false) {
             $this->assertFalse($actual);
         } else {
-            $this->assertInstanceOf('Aura\Web\Request\Accept\Value\Encoding', $actual->available);
+            $this->assertInstanceOf('Aura\Accept\Value\Encoding', $actual->available);
             $this->assertSame($expected, $actual->available->getValue());
         }
     }
@@ -132,7 +132,7 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
         if ($expected === false) {
             $this->assertFalse($actual);
         } else {
-            $this->assertInstanceOf('Aura\Web\Request\Accept\Value\Language', $actual->available);
+            $this->assertInstanceOf('Aura\Accept\Value\Language', $actual->available);
             $this->assertSame($expected, $actual->available->getValue());
         }
     }
@@ -153,7 +153,7 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
         if ($expected_value === false) {
             $this->assertFalse($actual);
         } else {
-            $this->assertInstanceOf('Aura\Web\Request\Accept\Value\Media', $actual->available);
+            $this->assertInstanceOf('Aura\Accept\Value\Media', $actual->available);
             $this->assertSame($expected_value, $actual->available->getValue());
             $this->assertSame($expected_params, $actual->available->getParameters());
         }
@@ -194,8 +194,8 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
                         'quality' => 0.8,
                     ),
                 ),
-                'values_class' => 'Aura\Web\Request\Accept\Charset',
-                'value_class' => 'Aura\Web\Request\Accept\Value\Charset',
+                'values_class' => 'Aura\Accept\Charset',
+                'value_class' => 'Aura\Accept\Value\Charset',
             )
         );
     }
@@ -240,8 +240,8 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
                     array('value' => 'gzip', 'quality' => 1.0),
                     array('value' => 'compress', 'quality' => 0.5)
                 ),
-                'values_class' => 'Aura\Web\Request\Accept\Encoding',
-                'value_class' => 'Aura\Web\Request\Accept\Value\Encoding',
+                'values_class' => 'Aura\Accept\Encoding',
+                'value_class' => 'Aura\Accept\Value\Encoding',
             )
         );
     }
@@ -358,8 +358,8 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
             array(
                 'accept' => array(),
                 'expect' => array(),
-                'values_class' => 'Aura\Web\Request\Accept\Language',
-                'value_class' => 'Aura\Web\Request\Accept\Value\Language',
+                'values_class' => 'Aura\Accept\Language',
+                'value_class' => 'Aura\Accept\Value\Language',
             ),
             array(
                 'accept' => array(
@@ -368,8 +368,8 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
                 'expect' => array(
                     array('type' => '*', 'subtype' => false, 'value' => '*',  'quality' => 1.0, 'parameters' => array())
                 ),
-                'values_class' => 'Aura\Web\Request\Accept\Language',
-                'value_class' => 'Aura\Web\Request\Accept\Value\Language',
+                'values_class' => 'Aura\Accept\Language',
+                'value_class' => 'Aura\Accept\Value\Language',
             ),
             array(
                 'accept' => array(
@@ -381,8 +381,8 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
                     array('type' => 'en', 'subtype' => false, 'value' => 'en', 'quality' => 1.0, 'parameters' => array()),
                     array('type' => '*', 'subtype' => false, 'value' => '*',  'quality' => 1.0, 'parameters' => array())
                 ),
-                'values_class' => 'Aura\Web\Request\Accept\Language',
-                'value_class' => 'Aura\Web\Request\Accept\Value\Language',
+                'values_class' => 'Aura\Accept\Language',
+                'value_class' => 'Aura\Accept\Value\Language',
             ),
         );
     }
@@ -415,8 +415,8 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
                         'parameters' => array(),
                     ),
                 ),
-                'values_class' => 'Aura\Web\Request\Accept\Media',
-                'value_class' => 'Aura\Web\Request\Accept\Value\Media',
+                'values_class' => 'Aura\Accept\Media',
+                'value_class' => 'Aura\Accept\Value\Media',
             ),
             array(
                 'accept' => array('HTTP_ACCEPT' => 'text/json;version=1,text/html;q=1;version=2,application/xml+xhtml;q=0'),
@@ -443,8 +443,8 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
                         'parameters' => array(),
                     ),
                 ),
-                'values_class' => 'Aura\Web\Request\Accept\Media',
-                'value_class' => 'Aura\Web\Request\Accept\Value\Media',
+                'values_class' => 'Aura\Accept\Media',
+                'value_class' => 'Aura\Accept\Value\Media',
             ),
             array(
                 'accept' => array('HTTP_ACCEPT' => 'text/json;version=1;foo=bar,text/html;version=2,application/xml+xhtml'),
@@ -471,8 +471,8 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
                         'parameters' => array(),
                     ),
                 ),
-                'values_class' => 'Aura\Web\Request\Accept\Media',
-                'value_class' => 'Aura\Web\Request\Accept\Value\Media',
+                'values_class' => 'Aura\Accept\Media',
+                'value_class' => 'Aura\Accept\Value\Media',
             ),
             array(
                 'accept' => array('HTTP_ACCEPT' => 'text/json;q=0.9;version=1;foo="bar"'),
@@ -485,8 +485,8 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
                         'parameters' => array('version' => 1, 'foo' => 'bar'),
                     ),
                 ),
-                'values_class' => 'Aura\Web\Request\Accept\Media',
-                'value_class' => 'Aura\Web\Request\Accept\Value\Media',
+                'values_class' => 'Aura\Accept\Media',
+                'value_class' => 'Aura\Accept\Value\Media',
             ),
         );
     }

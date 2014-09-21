@@ -3,23 +3,23 @@
  *
  * This file is part of Aura for PHP.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Web\Request;
+namespace Aura\Accept;
 
-use Aura\Web\Request\Accept\Charset;
-use Aura\Web\Request\Accept\Encoding;
-use Aura\Web\Request\Accept\Language;
-use Aura\Web\Request\Accept\Media;
+use Aura\Accept\Charset;
+use Aura\Accept\Encoding;
+use Aura\Accept\Language;
+use Aura\Accept\Media;
 
 /**
  *
  * A collection of `Accept*` objects.
  *
- * @package Aura.Web
+ * @package Aura.Accept
  *
  * @property-read Media $media The `Accept` values object.
  *
