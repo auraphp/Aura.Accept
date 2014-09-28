@@ -156,8 +156,11 @@ abstract class AbstractNegotiator implements IteratorAggregate
             $parameters = array();
             foreach ($pairs as $pair) {
                 $param = array();
-                preg_match('/^(?P<name>.+?)=(?P<quoted>"|\')?(?P<value>.*?)(?:\k<quoted>)?$/', $pair, $param);
-
+                preg_match(
+                    '/^(?P<name>.+?)=(?P<quoted>"|\')?(?P<value>.*?)(?:\k<quoted>)?$/',
+                    $pair,
+                    $param
+                );
                 $parameters[$param['name']] = $param['value'];
             }
 

@@ -87,23 +87,42 @@ class Accept
         LanguageNegotiator $language,
         MediaNegotiator $media
     ) {
-        $this->media    = $media;
         $this->charset  = $charset;
         $this->encoding = $encoding;
         $this->language = $language;
+        $this->media    = $media;
     }
 
-    /**
-     *
-     * Returns a negotiator object by name.
-     *
-     * @param string $key The negotiator object name.
-     *
-     * @return object The negotiator object.
-     *
-     */
-    public function __get($key)
+    public function negotiateCharset(array $available)
     {
-        return $this->$key;
+        return $this->parseResult($this->charset->negotiate($available));
+    }
+
+    public function negotiateEncoding(array $available)
+    {
+        return $this->parseResult($this->encoding->negotiate($available));
+    }
+
+    public function negotiateLanguage(array $available)
+    {
+        return $this->parseResult($this->language->negotiate($available));
+    }
+
+    public function negotiateMedia(array $available)
+    {
+        return $this->parseResult($this->media->negotiate($available));
+    }
+
+    protected function parseResult($result)
+    {
+        if (! $result) {
+            return false;
+        }
+
+        if ($result->acceptable && ! $result->acceptable->isWildcard()) {
+            return $result->acceptable;
+        }
+
+        return $result->available;
     }
 }
