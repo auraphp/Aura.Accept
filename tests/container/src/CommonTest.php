@@ -3,19 +3,25 @@ namespace Aura\Accept\_Config;
 
 use Aura\Di\ContainerAssertionsTrait;
 
-class CommonTest extends \PHPUnit_Framework_TestCase
-{
-    use ContainerAssertionsTrait;
+use Aura\Di\_Config\AbstractContainerTest;
 
-    public function setUp()
+class CommonTest extends AbstractContainerTest
+{
+    protected function getConfigClasses()
     {
-        $this->setUpContainer(array(
-            'Aura\Accept\_Config\Common',
-        ));
+        return array(
+            'Aura\Accept\_Config\Common'
+        );
     }
 
-    public function test()
+    public function provideNewInstance()
     {
-        $this->assertNewInstance('Aura\Accept\Accept');
+        return array(
+            array('Aura\Accept\Accept'),
+            array('Aura\Accept\Charset\CharsetNegotiator'),
+            array('Aura\Accept\Encoding\EncodingNegotiator'),
+            array('Aura\Accept\Language\LanguageNegotiator'),
+            array('Aura\Accept\Media\MediaNegotiator'),
+        );
     }
 }
