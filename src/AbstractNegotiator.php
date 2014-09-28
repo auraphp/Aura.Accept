@@ -11,7 +11,6 @@
 namespace Aura\Accept;
 
 use ArrayIterator;
-use Aura\Accept\Value\ValueFactory;
 use IteratorAggregate;
 
 /**
@@ -21,7 +20,7 @@ use IteratorAggregate;
  * @package Aura.Accept
  *
  */
-abstract class AbstractValues implements IteratorAggregate
+abstract class AbstractNegotiator implements IteratorAggregate
 {
     /**
      *

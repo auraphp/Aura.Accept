@@ -8,20 +8,22 @@
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Accept\Value;
+namespace Aura\Accept\Language;
+
+use Aura\Accept\AbstractValue;
 
 /**
  *
- * Represents an acceptable media type value.
+ * Represents an acceptable language value.
  *
  * @package Aura.Accept
  *
  */
-class Media extends AbstractValue
+class LanguageValue extends AbstractValue
 {
     /**
      *
-     * The media type.
+     * The language type.
      *
      * @var string
      *
@@ -30,12 +32,12 @@ class Media extends AbstractValue
 
     /**
      *
-     * The media subtype.
+     * The language subtype, if any.
      *
      * @var string
      *
      */
-    protected $subtype = '*';
+    protected $subtype;
 
     /**
      *
@@ -46,12 +48,12 @@ class Media extends AbstractValue
      */
     protected function init()
     {
-        list($this->type, $this->subtype) = explode('/', $this->value);
+        list($this->type, $this->subtype) = array_pad(explode('-', $this->value), 2, false);
     }
 
     /**
      *
-     * Returns the media type.
+     * Returns the language type.
      *
      * @return string
      *
@@ -63,7 +65,7 @@ class Media extends AbstractValue
 
     /**
      *
-     * Returns the media subtype.
+     * Returns the language subtype.
      *
      * @return string
      *
@@ -75,34 +77,22 @@ class Media extends AbstractValue
 
     /**
      *
-     * Is the acceptable value a wildcard?
+     * Checks if an available language value matches this acceptable value.
      *
-     * @return bool
-     *
-     */
-    public function isWildcard()
-    {
-        return $this->value == '*/*';
-    }
-
-    /**
-     *
-     * Checks if an available media type value matches this acceptable value.
-     *
-     * @param Media $avail An available media type value.
+     * @param Language $avail An available language value.
      *
      * @return True on a match, false if not.
      *
      */
-    public function match(Media $avail)
+    public function match(LanguageValue $avail)
     {
         // is it a full match?
         if (strtolower($this->value) == strtolower($avail->getValue())) {
             return $this->matchParameters($avail);
         }
 
-        // is it a type match?
-        return $this->subtype == '*'
+        // is it a type-without-subtype match?
+        return ! $this->subtype
             && strtolower($this->type) == strtolower($avail->getType())
             && $this->matchParameters($avail);
     }

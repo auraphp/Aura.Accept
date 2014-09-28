@@ -8,7 +8,7 @@
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Accept\Value;
+namespace Aura\Accept;
 
 /**
  *
@@ -27,10 +27,10 @@ class ValueFactory
      *
      */
     protected $map = array(
-        'charset' => 'Aura\Accept\Value\Charset',
-        'encoding' => 'Aura\Accept\Value\Encoding',
-        'language' => 'Aura\Accept\Value\Language',
-        'media' => 'Aura\Accept\Value\Media',
+        'charset' => 'Aura\Accept\Charset\CharsetValue',
+        'encoding' => 'Aura\Accept\Encoding\EncodingValue',
+        'language' => 'Aura\Accept\Language\LanguageValue',
+        'media' => 'Aura\Accept\Media\MediaValue',
     );
 
     /**

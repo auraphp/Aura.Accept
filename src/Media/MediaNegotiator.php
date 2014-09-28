@@ -8,9 +8,10 @@
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Accept;
+namespace Aura\Accept\Media;
 
-use Aura\Accept\Value\ValueFactory;
+use Aura\Accept\AbstractNegotiator;
+use Aura\Accept\ValueFactory;
 
 /**
  *
@@ -20,7 +21,7 @@ use Aura\Accept\Value\ValueFactory;
  * @package Aura.Accept
  *
  */
-class Media extends AbstractValues
+class MediaNegotiator extends AbstractNegotiator
 {
     /**
      *

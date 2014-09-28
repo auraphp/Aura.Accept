@@ -8,17 +8,19 @@
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Accept;
+namespace Aura\Accept\Language;
+
+use Aura\Accept\AbstractNegotiator;
 
 /**
  *
- * Represents a collection of `Accept-Encoding` header values, sorted in
+ * Represents a collection of `Accept-Language` header values, sorted in
  * quality order.
  *
  * @package Aura.Accept
  *
  */
-class Encoding extends AbstractValues
+class LanguageNegotiator extends AbstractNegotiator
 {
     /**
      *
@@ -27,7 +29,7 @@ class Encoding extends AbstractValues
      * @var string
      *
      */
-    protected $server_key = 'HTTP_ACCEPT_ENCODING';
+    protected $server_key = 'HTTP_ACCEPT_LANGUAGE';
 
     /**
      *
@@ -36,5 +38,5 @@ class Encoding extends AbstractValues
      * @var string
      *
      */
-    protected $value_type = 'encoding';
+    protected $value_type = 'language';
 }

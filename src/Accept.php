@@ -10,60 +10,60 @@
  */
 namespace Aura\Accept;
 
-use Aura\Accept\Charset;
-use Aura\Accept\Encoding;
-use Aura\Accept\Language;
-use Aura\Accept\Media;
+use Aura\Accept\Charset\CharsetNegotiator;
+use Aura\Accept\Encoding\EncodingNegotiator;
+use Aura\Accept\Language\LanguageNegotiator;
+use Aura\Accept\Media\MediaNegotiator;
 
 /**
  *
- * A collection of `Accept*` objects.
+ * A collection of negotiator objects.
  *
  * @package Aura.Accept
  *
- * @property-read Media $media The `Accept` values object.
+ * @property-read MediaNegotiator $media The `Accept` values object.
  *
- * @property-read Charset $charset The `Accept-Charset` values object.
+ * @property-read CharsetNegotiator $charset The `Accept-Charset` values object.
  *
- * @property-read Encoding $encoding The `Accept-Encoding` values object.
+ * @property-read EncodingNegotiator $encoding The `Accept-Encoding` values object.
  *
- * @property-read Language $language The `Accept-Language` values object.
+ * @property-read LanguageNegotiator $language The `Accept-Language` values object.
  *
  */
 class Accept
 {
     /**
      *
-     * The `Accept` values object.
+     * The media-type negotiator.
      *
-     * @var Media
+     * @var MediaNegotiator
      *
      */
     protected $media;
 
     /**
      *
-     * The `Accept-Charset` values object.
+     * The charset negotiator.
      *
-     * @var Charset
+     * @var CharsetNegotiator
      *
      */
     protected $charset;
 
     /**
      *
-     * The `Accept-Encoding` values object.
+     * The encoding negotiator.
      *
-     * @var Encoding
+     * @var EncodingNegotiator
      *
      */
     protected $encoding;
 
     /**
      *
-     * The `Accept-Language` values object.
+     * The language negotiator.
      *
-     * @var Language
+     * @var LanguageNegotiator
      *
      */
     protected $language;
@@ -72,20 +72,20 @@ class Accept
 	 *
 	 * Constructor.
 	 *
-	 * @param Accept\Charset $charset A charset object.
+	 * @param CharsetNegotiator $charset A charset negotiator.
 	 *
-	 * @param Accept\Encoding $encoding An encoding object.
+	 * @param EncodingNegotiator $encoding An encoding negotiator.
 	 *
-	 * @param Accept\Language $language A language object.
+	 * @param LanguageNegotiator $language A language negotiator.
 	 *
-	 * @param Accept\Media $media A media object.
+	 * @param MediaNegotiator $media A media-type negotiator.
 	 *
 	 */
     public function __construct(
-        Charset $charset,
-        Encoding $encoding,
-        Language $language,
-        Media $media
+        CharsetNegotiator $charset,
+        EncodingNegotiator $encoding,
+        LanguageNegotiator $language,
+        MediaNegotiator $media
     ) {
         $this->media    = $media;
         $this->charset  = $charset;
@@ -95,11 +95,11 @@ class Accept
 
     /**
      *
-     * Returns a values object by name.
+     * Returns a negotiator object by name.
      *
-     * @param string $key The values object name.
+     * @param string $key The negotiator object name.
      *
-     * @return object The values object.
+     * @return object The negotiator object.
      *
      */
     public function __get($key)

@@ -8,27 +8,29 @@
  * @license http://opensource.org/licenses/bsd-license.php BSD
  *
  */
-namespace Aura\Accept\Value;
+namespace Aura\Accept\Charset;
+
+use Aura\Accept\AbstractValue;
 
 /**
  *
- * Represents an encoding value.
+ * Represents an acceptable charset value.
  *
  * @package Aura.Accept
  *
  */
-class Encoding extends AbstractValue
+class CharsetValue extends AbstractValue
 {
     /**
      *
-     * Checks if an available encoding value matches this acceptable value.
+     * Checks if an available charset value matches this acceptable value.
      *
-     * @param Encoding $avail An available encoding value.
+     * @param Charset $avail An available charset value.
      *
      * @return True on a match, false if not.
      *
      */
-    public function match(Encoding $avail)
+    public function match(CharsetValue $avail)
     {
         return strtolower($this->value) == strtolower($avail->getValue())
             && $this->matchParameters($avail);

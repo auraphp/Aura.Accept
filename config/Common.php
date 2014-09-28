@@ -9,20 +9,20 @@ class Common extends Config
     public function define(Container $di)
     {
         /**
-         * Aura\Accept
+         * Aura\Accept\Accept
          */
         $di->params['Aura\Accept\Accept'] = array(
-            'charset'  => $di->lazyNew('Aura\Accept\Charset'),
-            'encoding' => $di->lazyNew('Aura\Accept\Encoding'),
-            'language' => $di->lazyNew('Aura\Accept\Language'),
-            'media'    => $di->lazyNew('Aura\Accept\Media'),
+            'charset'  => $di->lazyNew('Aura\Accept\Charset\CharsetNegotiator'),
+            'encoding' => $di->lazyNew('Aura\Accept\Encoding\EncodingNegotiator'),
+            'language' => $di->lazyNew('Aura\Accept\Language\LanguageNegotiator'),
+            'media'    => $di->lazyNew('Aura\Accept\Media\MediaNegotiator'),
         );
 
         /**
-         * Aura\Accept\AbstractValues
+         * Aura\Accept\AbstractNegotiator
          */
-        $di->params['Aura\Accept\AbstractValues'] = array(
-            'value_factory' => $di->lazyNew('Aura\Accept\Value\ValueFactory'),
+        $di->params['Aura\Accept\AbstractNegotiator'] = array(
+            'value_factory' => $di->lazyNew('Aura\Accept\ValueFactory'),
             'server' => $_SERVER,
         );
     }
