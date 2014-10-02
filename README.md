@@ -1,6 +1,6 @@
 # Aura.Accept
 
-Provides tools to negotiate `Accept*` headers between what is requested by the client and what is available from the server.
+Provides content-negotiation tools using `Accept*` headers.
 
 ## Foreword
 

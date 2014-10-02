@@ -1,7 +1,7 @@
 {
     "name": "aura/accept",
     "type": "library",
-    "description": "Provides web Request and Response objects for use by web controllers. These are representations of the PHP web environment, not HTTP request and response objects proper.",
+    "description": "Provides content-negotiation tools using Accept-* headers.",
     "keywords": [
         "request",
         "response"
