@@ -3,8 +3,13 @@
     "type": "library",
     "description": "Provides content-negotiation tools using Accept* headers.",
     "keywords": [
-        "request",
-        "response"
+        "accept",
+        "content negotiation",
+        "content type",
+        "media type",
+        "accept-charset",
+        "accept-encoding",
+        "accept-language"
     ],
     "homepage": "https://github.com/auraphp/Aura.Accept/releases",
     "license": "BSD-2-Clause",
