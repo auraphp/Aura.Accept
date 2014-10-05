@@ -234,7 +234,7 @@ abstract class AbstractNegotiator implements IteratorAggregate
      *
      * @param array $available Available values in preference order, if any.
      *
-     * @return mixed A plain-old PHP object with `$acceptable` and
+     * @return mixed A plain-old PHP object with negotiated `$acceptable` and
      * `$available` value objects on success, or false on failure.
      *
      */

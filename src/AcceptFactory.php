@@ -19,6 +19,33 @@ namespace Aura\Accept;
  */
 class AcceptFactory
 {
+    /**
+     *
+     * A copy of $_SERVER.
+     *
+     * @var array
+     *
+     */
+    protected $server = array();
+
+    /**
+     *
+     * A map of file .extensions to media types.
+     *
+     * @var array
+     *
+     */
+    protected $types = array();
+
+    /**
+     *
+     * Constructor.
+     *
+     * @param array $server A copy of $_SERVER.
+     *
+     * @param array $types A map of file .extensions to media types.
+     *
+     */
     public function __construct(array $server = array(), array $types = array())
     {
         $this->server = $server;
@@ -30,35 +57,63 @@ class AcceptFactory
      *
      * Returns an Accept object with all negotiators.
      *
-     * @return Request\Accept
+     * @return Accept
      *
      */
     public function newInstance()
     {
         return new Accept(
-            $this->newCharset(),
-            $this->newEncoding(),
-            $this->newLanguage(),
-            $this->newMedia()
+            $this->newCharsetNegotiator(),
+            $this->newEncodingNegotiator(),
+            $this->newLanguageNegotiator(),
+            $this->newMediaNegotiator()
         );
     }
 
-    public function newCharset()
+    /**
+     *
+     * Returns a charset negotiator.
+     *
+     * @return Charset\CharsetNegotiator
+     *
+     */
+    public function newCharsetNegotiator()
     {
         return new Charset\CharsetNegotiator($this->value_factory, $this->server);
     }
 
-    public function newEncoding()
+    /**
+     *
+     * Returns an encoding negotiator.
+     *
+     * @return Encoding\EncodingNegotiator
+     *
+     */
+    public function newEncodingNegotiator()
     {
         return new Encoding\EncodingNegotiator($this->value_factory, $this->server);
     }
 
-    public function newLanguage()
+    /**
+     *
+     * Returns a language negotiator.
+     *
+     * @return Language\LanguageNegotiator
+     *
+     */
+    public function newLanguageNegotiator()
     {
         return new Language\LanguageNegotiator($this->value_factory, $this->server);
     }
 
-    public function newMedia()
+    /**
+     *
+     * Returns a media type negotiator.
+     *
+     * @return Media\MediaNegotiator
+     *
+     */
+    public function newMediaNegotiator()
     {
         return new Media\MediaNegotiator($this->value_factory, $this->server, $this->types);
     }

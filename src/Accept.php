@@ -21,14 +21,6 @@ use Aura\Accept\Media\MediaNegotiator;
  *
  * @package Aura.Accept
  *
- * @property-read MediaNegotiator $media The `Accept` values object.
- *
- * @property-read CharsetNegotiator $charset The `Accept-Charset` values object.
- *
- * @property-read EncodingNegotiator $encoding The `Accept-Encoding` values object.
- *
- * @property-read LanguageNegotiator $language The `Accept-Language` values object.
- *
  */
 class Accept
 {
@@ -93,26 +85,79 @@ class Accept
         $this->media    = $media;
     }
 
+    /**
+     *
+     * Negotiate between acceptable and available charsets.
+     *
+     * @param array $available The list of available charsets, ordered by most
+     * preferred to least preferred.
+     *
+     * @return Charset\CharsetValue
+     *
+     */
     public function negotiateCharset(array $available)
     {
         return $this->parseResult($this->charset->negotiate($available));
     }
 
+    /**
+     *
+     * Negotiate between acceptable and available encodings.
+     *
+     * @param array $available The list of available encodings, ordered by most
+     * preferred to least preferred.
+     *
+     * @return Encoding\EncodingValue|false
+     *
+     */
     public function negotiateEncoding(array $available)
     {
         return $this->parseResult($this->encoding->negotiate($available));
     }
 
+    /**
+     *
+     * Negotiate between acceptable and available languages.
+     *
+     * @param array $available The list of available languages, ordered by most
+     * preferred to least preferred.
+     *
+     * @return Language\LanguageValue|false
+     *
+     */
     public function negotiateLanguage(array $available)
     {
         return $this->parseResult($this->language->negotiate($available));
     }
 
+    /**
+     *
+     * Negotiate between acceptable and available media types.
+     *
+     * @param array $available The list of available media types, ordered by
+     * most preferred to least preferred.
+     *
+     * @return Media\MediaValue|false
+     *
+     */
     public function negotiateMedia(array $available)
     {
         return $this->parseResult($this->media->negotiate($available));
     }
 
+    /**
+     *
+     * Given a negotiation result, return either the acceptable value or the
+     * available value (or false if negotiation failed).
+     *
+     * Sometimes the acceptable value is a wildcard, or none was specified, so
+     * we have to go with the available value.
+     *
+     * @param mixed $result A negotiation result.
+     *
+     * @return AbstractValue|false
+     *
+     */
     protected function parseResult($result)
     {
         if (! $result) {
