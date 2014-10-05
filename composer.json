@@ -11,7 +11,7 @@
         "accept-encoding",
         "accept-language"
     ],
-    "homepage": "https://github.com/auraphp/Aura.Accept/releases",
+    "homepage": "https://github.com/auraphp/Aura.Accept",
     "license": "BSD-2-Clause",
     "authors": [
         {
