@@ -14,6 +14,11 @@ class CommonTest extends AbstractContainerTest
         );
     }
 
+    protected function getAutoResolve()
+    {
+        return false;
+    }
+
     public function provideNewInstance()
     {
         return array(
