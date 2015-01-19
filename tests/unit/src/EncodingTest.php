@@ -83,6 +83,11 @@ class EncodingTest extends AcceptTestCase
                 'available' => array('foo'),
                 'expected' => false,
             ),
+            array(
+                'server' => array('HTTP_ACCEPT_ENCODING' => 'gzip, compress, foo;q=0'),
+                'available' => array('*'),
+                'expected' => '*',
+            ),
         );
     }
 }

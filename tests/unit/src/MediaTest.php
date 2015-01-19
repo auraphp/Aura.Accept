@@ -114,6 +114,13 @@ class MediaTest extends AcceptTestCase
                 'expected_value' => false,
                 'expected_params' => array(),
             ),
+            array(
+                // */* is available
+                'server' => array('HTTP_ACCEPT' => 'application/json, application/xml, text/csv'),
+                'available' => array('*/*'),
+                'expected_value' => '*/*',
+                'expected_params' => array(),
+            ),
         );
     }
 

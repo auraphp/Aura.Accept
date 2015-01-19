@@ -86,6 +86,10 @@ class LanguageValue extends AbstractValue
      */
     public function match(LanguageValue $avail)
     {
+        if ($avail->getValue() == '*') {
+            return true;
+        }
+
         // is it a full match?
         if (strtolower($this->value) == strtolower($avail->getValue())) {
             return $this->matchParameters($avail);

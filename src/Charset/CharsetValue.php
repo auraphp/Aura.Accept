@@ -32,6 +32,10 @@ class CharsetValue extends AbstractValue
      */
     public function match(CharsetValue $avail)
     {
+        if ($avail->getValue() == '*') {
+            return true;
+        }
+
         return strtolower($this->value) == strtolower($avail->getValue())
             && $this->matchParameters($avail);
     }
