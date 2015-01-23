@@ -107,6 +107,11 @@ class LanguageTest extends AcceptTestCase
                 'server' => array('HTTP_ACCEPT_LANGUAGE' => 'en-us, en-gb, en, foo-bar;q=0'),
                 'available' => array('foo-bar'),
                 'expected' => false
+            ),
+            array(
+                'server' => array('HTTP_ACCEPT_LANGUAGE' => 'en-us, en-gb, en, foo-bar;q=0'),
+                'available' => array('*'),
+                'expected' => '*'
             )
         );
     }

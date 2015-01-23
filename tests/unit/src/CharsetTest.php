@@ -97,6 +97,11 @@ class CharsetTest extends AcceptTestCase
                 'available' => array('baz'),
                 'expected' => false
             ),
+            array(
+                'server' => array('HTTP_ACCEPT_CHARSET' => 'iso-8859-5, unicode-1-1'),
+                'available' => array('*'),
+                'expected' => '*'
+            ),
         );
     }
 }

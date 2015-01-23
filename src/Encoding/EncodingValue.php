@@ -32,6 +32,10 @@ class EncodingValue extends AbstractValue
      */
     public function match(EncodingValue $avail)
     {
+        if ($avail->getValue() == '*') {
+            return true;
+        }
+
         return strtolower($this->value) == strtolower($avail->getValue())
             && $this->matchParameters($avail);
     }
