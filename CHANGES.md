@@ -1,1 +1,1 @@
-Initial 2.0 stable release.
+- Allow wildcards as $available values for negotiation; on matching an available wildcard, the available wildcard is returned as the negotiated value.
