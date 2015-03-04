@@ -103,7 +103,7 @@ abstract class AbstractNegotiator implements IteratorAggregate
      * @return null
      *
      */
-    protected function set($acceptable = null)
+    public function set($acceptable = null)
     {
         $this->acceptable = array();
         $this->add($acceptable);
@@ -123,7 +123,7 @@ abstract class AbstractNegotiator implements IteratorAggregate
      * @todo Allow this to take an array so we can parse-and-sort in one pass.
      *
      */
-    protected function add($acceptable = null)
+    public function add($acceptable = null)
     {
         foreach ((array) $acceptable as $string) {
             $this->parse($string);
