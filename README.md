@@ -48,7 +48,7 @@ object.
 
 ```php
 <?php
-use Aura\AcceptFactory;
+use Aura\Accept\AcceptFactory;
 
 $accept_factory = new AcceptFactory($_SERVER);
 $accept = $accept_factory->newInstance();

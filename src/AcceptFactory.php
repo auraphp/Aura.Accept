@@ -37,6 +37,15 @@ class AcceptFactory
 
     /**
      *
+     * Contains the ValueFactory.
+     *
+     * @var ValueFactory
+     *
+     */
+    protected $value_factory;
+
+    /**
+     *
      * Constructor.
      *
      * @param array $server A copy of $_SERVER.
