@@ -1,1 +1,1 @@
-- ADD: Make AbstractNegotiator::set() and add() public. Fixes #4.
+This is a hygiene release to update the documentation and support files.
