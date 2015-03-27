@@ -5,7 +5,7 @@ use Aura\Di\ContainerAssertionsTrait;
 
 use Aura\Di\_Config\AbstractContainerTest;
 
-class CommonTest extends AbstractContainerTest
+class ContainerTest extends AbstractContainerTest
 {
     protected function getConfigClasses()
     {
