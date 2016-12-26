@@ -46,7 +46,9 @@ class MediaValue extends AbstractValue
      */
     protected function init()
     {
-        list($this->type, $this->subtype) = explode('/', $this->value);
+        $values = explode('/', $this->value);
+        $this->type = $values[0];
+        $this->subtype = isset($values[1]) ? $values[1] : '*';
     }
 
     /**

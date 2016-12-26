@@ -43,4 +43,18 @@ class AcceptTest extends \PHPUnit_Framework_TestCase
         $expect = 'application/json';
         $this->assertSame($expect, $actual->getValue());
     }
+
+    public function testIssue8()
+    {
+        $factory = new AcceptFactory(array(
+            'HTTP_ACCEPT' => 'application/xml;q=1.0,text/csv;q=0.5,*;q=0.1',
+        ));
+        $accept = $factory->newInstance();
+        $actual = $accept->negotiateMedia(array(
+            'application/json',
+            'text/csv',
+        ));
+        $expect = 'text/csv';
+        $this->assertSame($expect, $actual->getValue());
+    }
 }
