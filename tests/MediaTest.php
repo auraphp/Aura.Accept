@@ -121,6 +121,13 @@ class MediaTest extends AcceptTestCase
                 'expected_value' => '*/*',
                 'expected_params' => array(),
             ),
+            array(
+                // check that quality values are properly sorted
+                'server' => array('HTTP_ACCEPT' => 'application/yaml;q=.1,application/json;q=.3,application/xml;q=.2'),
+                'available' => array('application/yaml', 'application/json', 'application/xml'),
+                'expected_value' => 'application/json',
+                'expected_params' => array()
+            )
         );
     }
 

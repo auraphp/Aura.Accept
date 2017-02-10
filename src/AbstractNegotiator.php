@@ -195,7 +195,7 @@ abstract class AbstractNegotiator implements IteratorAggregate
 
         // sort into q-value buckets
         foreach ($this->acceptable as $value) {
-            $bucket[$value->getQuality()][] = $value;
+            $bucket[(string)$value->getQuality()][] = $value;
         }
 
         // reverse-sort the buckets so that q=1 is first and q=0 is last,
