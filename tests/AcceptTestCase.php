@@ -6,7 +6,7 @@ class AcceptTestCase extends \PHPUnit_Framework_TestCase
     protected function assertAcceptValues($actual, $expect, $negotiator_class, $value_class)
     {
         $this->assertInstanceOf($negotiator_class, $actual);
-        $this->assertSameSize($actual->get(), $expect);
+        $this->assertSameSize($expect, $actual->get());
 
         foreach ($actual as $key => $item) {
             $this->assertInstanceOf($value_class, $item);
