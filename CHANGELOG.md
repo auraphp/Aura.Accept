@@ -4,6 +4,7 @@
 - Fixed bug when quality value was float, the array key was becoming zero.
 Now converted to string https://github.com/auraphp/Aura.Accept/pull/10
 - phpunit added to `require-dev` of composer. https://github.com/auraphp/Aura.Accept/pull/12
+- CHANGES.md file removed, added CHANGELOG.md.
 
 ## 2.2.4
 
