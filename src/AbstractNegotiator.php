@@ -159,7 +159,9 @@ abstract class AbstractNegotiator implements IteratorAggregate
                     $pair,
                     $param
                 );
-                $parameters[$param['name']] = $param['value'];
+                if (array_key_exists('name', $param) && array_key_exists('value', $param)) {
+                    $parameters[$param['name']] = $param['value'];
+                }
             }
 
             $quality = 1.0;
