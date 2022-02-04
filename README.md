@@ -6,7 +6,7 @@ Provides content-negotiation tools using `Accept*` headers.
 
 ### Installation
 
-This library requires PHP 5.3 or later;  it has been tested on PHP 5.3-8.1. we recommend using the latest available version of PHP as a matter of principle. It has no userland dependencies.
+This library requires PHP 7.2 or later;  it has been tested on PHP 7.2-8.1. we recommend using the latest available version of PHP as a matter of principle. It has no userland dependencies.
 
 It is installable and autoloadable via Composer as [aura/accept](https://packagist.org/packages/aura/accept).
 
@@ -14,9 +14,9 @@ Alternatively, [download a release](https://github.com/auraphp/Aura.Accept/relea
 
 ### Quality
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/auraphp/Aura.Accept/badges/quality-score.png?b=3.x)](https://scrutinizer-ci.com/g/auraphp/Aura.Accept/)
-[![codecov](https://codecov.io/gh/auraphp/Aura.Accept/branch/3.x/graph/badge.svg?token=UASDouLxyc)](https://codecov.io/gh/auraphp/Aura.Accept)
-[![Continuous Integration](https://github.com/auraphp/Aura.Accept/actions/workflows/continuous-integration.yml/badge.svg?branch=3.x)](https://github.com/auraphp/Aura.Accept/actions/workflows/continuous-integration.yml)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/auraphp/Aura.Accept/badges/quality-score.png?b=4.x)](https://scrutinizer-ci.com/g/auraphp/Aura.Accept/)
+[![codecov](https://codecov.io/gh/auraphp/Aura.Accept/branch/4.x/graph/badge.svg?token=UASDouLxyc)](https://codecov.io/gh/auraphp/Aura.Accept)
+[![Continuous Integration](https://github.com/auraphp/Aura.Accept/actions/workflows/continuous-integration.yml/badge.svg?branch=4.x)](https://github.com/auraphp/Aura.Accept/actions/workflows/continuous-integration.yml)
 
 To run the [PHPUnit](http://phpunit.de/manual/) unit tests at the command line, issue `composer install` and then `vendor/bin/phpunit` at the package root. This requires [Composer](http://getcomposer.org/) to be available as `composer`.
 
