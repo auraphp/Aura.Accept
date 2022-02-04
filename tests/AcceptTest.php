@@ -1,9 +1,11 @@
 <?php
 namespace Aura\Accept;
 
-class AcceptTest extends \PHPUnit_Framework_TestCase
+use Yoast\PHPUnitPolyfills\TestCases\TestCase;
+
+class AcceptTest extends TestCase
 {
-    protected function setUp()
+    protected function set_up()
     {
         $factory = new AcceptFactory(array(
             'HTTP_ACCEPT' => 'application/json, application/xml, text/*, */*',

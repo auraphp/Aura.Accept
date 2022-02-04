@@ -1,7 +1,9 @@
 <?php
 namespace Aura\Accept;
 
-class AcceptTestCase extends \PHPUnit_Framework_TestCase
+use Yoast\PHPUnitPolyfills\TestCases\TestCase;
+
+class AcceptTestCase extends TestCase
 {
     protected function assertAcceptValues($actual, $expect, $negotiator_class, $value_class)
     {
