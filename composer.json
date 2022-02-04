@@ -24,16 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Aura\\Accept\\": "src/",
-            "Aura\\Accept\\_Config\\": "config/"
-        }
-    },
-    "extra": {
-        "aura": {
-            "type": "library",
-            "config": {
-                "common": "Aura\\Accept\\_Config\\Common"
-            }
+            "Aura\\Accept\\": "src/"
         }
     },
     "require-dev": {
