@@ -6,7 +6,7 @@ Provides content-negotiation tools using `Accept*` headers.
 
 ### Installation
 
-This library requires PHP 7.2 or later;  it has been tested on PHP 7.2-8.1. we recommend using the latest available version of PHP as a matter of principle. It has no userland dependencies.
+This library requires PHP 7.2 or later;  it has been tested on PHP 7.4-8.1. we recommend using the latest available version of PHP as a matter of principle. It has no userland dependencies.
 
 It is installable and autoloadable via Composer as [aura/accept](https://packagist.org/packages/aura/accept).
 
