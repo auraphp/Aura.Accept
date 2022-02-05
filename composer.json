@@ -12,7 +12,7 @@
         "accept-language"
     ],
     "homepage": "https://github.com/auraphp/Aura.Accept",
-    "license": "BSD-2-Clause",
+    "license": "MIT",
     "authors": [
         {
             "name": "Aura.Accept Contributors",
