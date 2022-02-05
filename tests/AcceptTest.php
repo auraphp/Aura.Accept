@@ -1,9 +1,11 @@
 <?php
 namespace Aura\Accept;
 
-class AcceptTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class AcceptTest extends TestCase
 {
-    protected function setUp()
+    protected function setup(): void
     {
         $factory = new AcceptFactory(array(
             'HTTP_ACCEPT' => 'application/json, application/xml, text/*, */*',

@@ -12,7 +12,7 @@
         "accept-language"
     ],
     "homepage": "https://github.com/auraphp/Aura.Accept",
-    "license": "BSD-2-Clause",
+    "license": "MIT",
     "authors": [
         {
             "name": "Aura.Accept Contributors",
@@ -20,25 +20,15 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=7.4"
     },
     "autoload": {
         "psr-4": {
-            "Aura\\Accept\\": "src/",
-            "Aura\\Accept\\_Config\\": "config/"
-        }
-    },
-    "extra": {
-        "aura": {
-            "type": "library",
-            "config": {
-                "common": "Aura\\Accept\\_Config\\Common"
-            }
+            "Aura\\Accept\\": "src/"
         }
     },
     "require-dev": {
-        "aura/di": "~2.0",
-        "phpunit/phpunit": "~5.7 || ~4.8"
+        "phpunit/phpunit": "^9.5"
     },
     "autoload-dev": {
         "psr-4": {
