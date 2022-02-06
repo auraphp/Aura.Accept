@@ -1,7 +1,7 @@
 <?php
 namespace Aura\Accept;
 
-use PHPUnit\Framework\TestCase;
+use Yoast\PHPUnitPolyfills\TestCases\TestCase;
 
 class AcceptTestCase extends TestCase
 {
