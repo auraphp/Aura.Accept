@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 4.0.0
+- Fix - Undefined offset notice for name and value in AbstractNegotiator by @gomboc in https://github.com/auraphp/Aura.Accept/pull/14
+- Updated license from BSD to MIT by @koriym in https://github.com/auraphp/Aura.Accept/pull/17
+- Enable PHP 7.2-8.1 compatibility by @koriym in https://github.com/auraphp/Aura.Accept/pull/16
+- Updated scrutinizer config by @harikt in https://github.com/auraphp/Aura.Accept/pull/18
+
 ## 2.2.5
 
 - Fixed bug when quality value was float, the array key was becoming zero.
