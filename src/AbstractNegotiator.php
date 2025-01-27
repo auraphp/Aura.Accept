@@ -239,7 +239,7 @@ abstract class AbstractNegotiator implements IteratorAggregate
      * `$available` value objects on success, or false on failure.
      *
      */
-    public function negotiate(array $available = null)
+    public function negotiate(?array $available = null)
     {
         // if none available, no possible match
         if (! $available) {
