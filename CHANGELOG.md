@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.0.1
+- Enable PHP 8.2 compat by @koriym in https://github.com/auraphp/Aura.Accept/pull/20
+- Fixed PHP Deprecated Implicitly marking parameter $available as nullable by @StuTheBearded in https://github.com/auraphp/Aura.Accept/pull/21
+
 ## 4.0.0
 - Fix - Undefined offset notice for name and value in AbstractNegotiator by @gomboc in https://github.com/auraphp/Aura.Accept/pull/14
 - Updated license from BSD to MIT by @koriym in https://github.com/auraphp/Aura.Accept/pull/17
