@@ -5,6 +5,8 @@ use Yoast\PHPUnitPolyfills\TestCases\TestCase;
 
 class AcceptTest extends TestCase
 {
+    protected $accept;
+
     protected function set_up()
     {
         $factory = new AcceptFactory(array(
